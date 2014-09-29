@@ -7,14 +7,14 @@ public class Pigeon : MonoBehaviour {
 
 	private bool mouseDown;
 
-	public static float velBullet;
+	public static float forceBullet;
 
 	private Transform trans;
 
 	// Use this for initialization
 	void Start () {
 		trans = GetComponent<Transform>();
-		velBullet = 0;
+		forceBullet = 0;
 		mouseDown = false;
 	}
 	
@@ -22,7 +22,7 @@ public class Pigeon : MonoBehaviour {
 	void Update () {
 		if(mouseDown)
 		{
-			velBullet += 0.05f;
+			forceBullet += 0.5f;
 		}
 	}
 
@@ -35,6 +35,7 @@ public class Pigeon : MonoBehaviour {
 	{
 		mouseDown = false;
 		GameObject go = Instantiate(pfbBullet, new Vector3(trans.position.x, (trans.position.y -0.5f), trans.position.z), Quaternion.identity) as GameObject;
-		velBullet = 0;
+		go.GetComponent<Bullet> ().setForce (forceBullet);
+		forceBullet = 0;
 	}
 }
