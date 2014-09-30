@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Pigeon : MonoBehaviour {
 
-	public GameObject pfbBullet;
+	//Atributo que sera usado para referenciar qual prefab nos queremos instanciar
+	public GameObject bullet;
 
 	private bool mouseDown;
 
@@ -22,7 +23,7 @@ public class Pigeon : MonoBehaviour {
 	void Update () {
 		if(mouseDown)
 		{
-			forceBullet += 0.5f;
+			forceBullet += 0.1f;
 		}
 	}
 
@@ -34,7 +35,7 @@ public class Pigeon : MonoBehaviour {
 	void OnMouseUp()
 	{
 		mouseDown = false;
-		GameObject go = Instantiate(pfbBullet, new Vector3(trans.position.x, (trans.position.y -0.5f), trans.position.z), Quaternion.identity) as GameObject;
+		GameObject go = Instantiate(bullet, new Vector3(trans.position.x, (trans.position.y -0.3f), trans.position.z), Quaternion.identity) as GameObject;
 		go.GetComponent<Bullet> ().setForce (forceBullet);
 		forceBullet = 0;
 	}
