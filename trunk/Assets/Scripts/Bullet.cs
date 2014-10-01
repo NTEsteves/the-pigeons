@@ -11,7 +11,6 @@ public class Bullet : MonoBehaviour {
 	void Start () {
 
 		rig2D = GetComponent<Rigidbody2D>();
-
 		trans = GetComponent<Transform> ();
 	}
 	
@@ -35,12 +34,18 @@ public class Bullet : MonoBehaviour {
 	// Metodo que determina o momento em que o tiro colide com o chao (Ground)
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		// Determinando a colisao com o GameObject Ground, pela Tag que foi atribuida a ele
-		if(other.gameObject.tag == "Ground")
+		// Determinando a colisao com o GameObject , pela Tag que foi atribuida a ele
+		switch(other.gameObject.tag)
 		{
+		case "Ground":
 			Destroy(this.gameObject);
+			Debug.Log ("Ground");
+			break;
+
+		case "Person":
+			Destroy(this.gameObject);
+			ManagerGame.score ++;
+			break;
 		}
 	}
-
-
 }

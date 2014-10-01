@@ -7,9 +7,9 @@ public class ManagerWild : MonoBehaviour {
 	public float[] intervalVelocity = new float[2];
 
 	float timeChange;
-	public float[] intervalChange = new float[2];
+	public float[] intervalTimeChange = new float[2];
 
-	public static int direction;
+	public static float direction;
 	public float[] intervalDirection = new float[2]; 
 
 	// Use this for initialization
@@ -26,8 +26,8 @@ public class ManagerWild : MonoBehaviour {
 		if(timeChange <= 0)
 		{
 			velocity = Random.Range(intervalVelocity[0], intervalVelocity[1]);
-			timeChange = Random.Range(intervalChange[0], intervalChange[1]);
-			direction = Random.Range (intervalDirection[0], intervalDirection[1]) % 2 == 0 ? -1 : 1;
+			timeChange = Random.Range(intervalTimeChange[0], intervalTimeChange[1]);
+			direction = Random.seed % 2 >= 0 ? 1 : -1;
 		}
 	}
 }

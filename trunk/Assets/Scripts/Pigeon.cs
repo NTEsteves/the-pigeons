@@ -34,7 +34,12 @@ public class Pigeon : MonoBehaviour {
 
 	void OnMouseUp()
 	{
+		createBullet ();
 		mouseDown = false;
+	}
+
+	void createBullet()
+	{
 		GameObject go = Instantiate(bullet, new Vector3(trans.position.x, (trans.position.y -0.3f), trans.position.z), Quaternion.identity) as GameObject;
 		go.GetComponent<Bullet> ().setForce (forceBullet);
 		forceBullet = 0;

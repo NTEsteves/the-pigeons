@@ -8,6 +8,7 @@ public class ManagerGame : MonoBehaviour {
 	int points;
 	float time;
 	int lifes;
+	public static int score;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,8 @@ public class ManagerGame : MonoBehaviour {
 	void OnGUI() 
 	{
 		GUI.Label (new Rect (40, 200, 50, 15), "Wild: " + ManagerWild.velocity, customButton);
+		GUI.Label (new Rect (40, 230, 50, 15), "Wild Direction: " + ManagerWild.direction, customButton);
 		GUI.Label (new Rect (40, 215, 50, 15), "Vel Bullet: " + Pigeon.forceBullet, customButton);
-		GUI.Label (new Rect (40, 230, 50, 15), "Vel Bullet: " + ManagerWild.direction, customButton);
+		GUI.Label (new Rect (40, 245, 50, 15), "Score: " + score, customButton);
 	}
 }
