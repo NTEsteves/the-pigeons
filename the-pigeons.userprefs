@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ManagerPerson.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ManagerWild.cs">
     <Files>
-      <File FileName="Assets\Scripts\ManagerWild.cs" Line="13" Column="46" />
-      <File FileName="Assets\Scripts\Pigeon.cs" Line="39" Column="53" />
-      <File FileName="Assets\Scripts\Bullet.cs" Line="25" Column="71" />
-      <File FileName="Assets\Scripts\ManagerPerson.cs" Line="9" Column="60" />
+      <File FileName="Assets\Scripts\ManagerWild.cs" Line="30" Column="31" />
+      <File FileName="Assets\Scripts\Pigeon.cs" Line="37" Column="19" />
+      <File FileName="Assets\Scripts\Bullet.cs" Line="37" Column="80" />
+      <File FileName="Assets\Scripts\ManagerPerson.cs" Line="44" Column="4" />
+      <File FileName="Assets\Scripts\Person.cs" Line="25" Column="3" />
+      <File FileName="Assets\Scripts\ManagerGame.cs" Line="10" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ManagerGame.cs" />
      <Compile Include="Assets\Scripts\ManagerPerson.cs" />
      <Compile Include="Assets\Scripts\ManagerWild.cs" />
+     <Compile Include="Assets\Scripts\Person.cs" />
      <Compile Include="Assets\Scripts\Pigeon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
