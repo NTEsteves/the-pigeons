@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour {
 	Transform trans;
 	float force;
 
+	public int[] limitForDestroy = new int[2];
+
 	// Use this for initialization
 	void Start () {
 
@@ -22,7 +24,7 @@ public class Bullet : MonoBehaviour {
 		rig2D.AddForce (new Vector2 ((ManagerWild.velocity *ManagerWild.direction) /force, 0));
 
 		// Caso ele saida da tela pelos lados o objeto tambem sera destruido
-		if(trans.position.x < -5 || trans.position.x > 5)
+		if(trans.position.x < limitForDestroy[0] || trans.position.x > limitForDestroy[1])
 		{
 			Destroy(this.gameObject);
 		}
@@ -32,7 +34,7 @@ public class Bullet : MonoBehaviour {
 	public void setForce(float f){force = f;}
 
 	// Metodo que determina o momento em que o tiro colide com o chao (Ground)
-	void OnCollisionEnter2D(Collision2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		// Determinando a colisao com o GameObject , pela Tag que foi atribuida a ele
 		switch(other.gameObject.tag)

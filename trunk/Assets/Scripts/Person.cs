@@ -7,6 +7,7 @@ public class Person : MonoBehaviour {
 	Transform trans;
 
 	public float velocity;
+	public int[] limitForDestroy = new int[2];
 
 	void Start () {
 		trans = GetComponent<Transform>();
@@ -15,13 +16,13 @@ public class Person : MonoBehaviour {
 	void Update () {
 		// Movendo a pessoa
 		trans.Translate (new Vector3(velocity *direction, 0, 0));
+
+		if(trans.position.x < limitForDestroy[0] || trans.position.x > limitForDestroy[1])
+		{
+			Destroy(this.gameObject);
+		}
 	}
 
 	// Metodo para settar a direcao da pessoa (alvo)
 	public void setDirection(int d){direction = d;}
-
-	void OnCollisionEnter2D(Collision2D other)
-	{
-
-	}
 }
