@@ -47,6 +47,7 @@ public class Bullet : MonoBehaviour {
 		case "Person":
 			Destroy(this.gameObject);
 			ManagerGame.score ++;
+			ManagerGame.point ++;
 			break;
 		}
 	}

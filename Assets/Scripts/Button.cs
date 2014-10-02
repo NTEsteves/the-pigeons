@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Button : MonoBehaviour {
 
-	public string Scene;
+	public string scene;
 	public Sprite mouseOverSprite;
 	public Sprite mouseExitSprite;
 
@@ -35,7 +35,7 @@ public class Button : MonoBehaviour {
 	void OnMouseDown()
 	{
 
-		Application.LoadLevel(Scene);
+		Application.LoadLevel(scene);
 	}
 
 }
