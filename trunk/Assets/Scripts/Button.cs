@@ -7,6 +7,8 @@ public class Button : MonoBehaviour {
 	public Sprite mouseOverSprite;
 	public Sprite mouseExitSprite;
 
+	public AudioClip clickSound ;
+
 	SpriteRenderer renderer;
 
 	// Use this for initialization
@@ -34,8 +36,14 @@ public class Button : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		audio.PlayOneShot(clickSound);
 
+	}
+
+	void OnMouseUp()
+	{
 		Application.LoadLevel(scene);
+
 	}
 
 }
