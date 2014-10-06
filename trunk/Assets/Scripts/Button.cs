@@ -6,7 +6,6 @@ public class Button : MonoBehaviour {
 	public string scene;
 	public Sprite mouseOverSprite;
 	public Sprite mouseExitSprite;
-
 	public AudioClip clickSound ;
 
 	SpriteRenderer renderer;
