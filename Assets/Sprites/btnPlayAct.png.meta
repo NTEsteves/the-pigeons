@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 3d98f08ec258b4478a0820667348e5d6
+guid: 34983e780915a4f4dab9ed2dcf5f367b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: play2_132x47
+    21300000: btnPlayAct
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
