@@ -8,7 +8,8 @@ public class Pigeon : MonoBehaviour {
 
 	private bool mouseDown;
 
-	public static float forceBullet;
+	float forceBullet;
+	public static float lastForceBullet;
 
 	private Transform trans;
 
@@ -23,7 +24,12 @@ public class Pigeon : MonoBehaviour {
 	void Update () {
 		if(mouseDown)
 		{
-			forceBullet += 0.1f;
+			if(forceBullet <= 5)
+			{
+				forceBullet += 0.1f;
+			}
+
+			lastForceBullet = forceBullet;
 		}
 	}
 
