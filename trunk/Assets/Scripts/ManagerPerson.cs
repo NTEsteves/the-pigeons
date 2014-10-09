@@ -31,7 +31,7 @@ public class ManagerPerson : MonoBehaviour {
 	void createPerson()
 	{
 		positionCreate = Random.Range(0, 3) %2 == 0 ? intervalPositionCreate[0] : intervalPositionCreate[1];
-		GameObject go = Instantiate(person, new Vector3(positionCreate, -1.8f, 0), Quaternion.identity) as GameObject;
+		GameObject go = Instantiate(person, new Vector3(positionCreate, -2f, 0), Quaternion.identity) as GameObject;
 		timeCreate = Random.Range(intervalTimeCreate[0], intervalTimeCreate[1]);
 		
 		// Condicao que verifica onde ele ira nascer e da a determinada direcao
