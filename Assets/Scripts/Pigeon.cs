@@ -12,6 +12,7 @@ public class Pigeon : MonoBehaviour {
 	public static float lastForceBullet;
 
 	private Transform trans;
+	public AudioClip clickSound ;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +41,7 @@ public class Pigeon : MonoBehaviour {
 
 	void OnMouseUp()
 	{
+		audio.PlayOneShot(clickSound);
 		createBullet ();
 		mouseDown = false;
 	}
