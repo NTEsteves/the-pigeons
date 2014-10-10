@@ -4,12 +4,14 @@ using System.Collections;
 public class ManagerPigeon : MonoBehaviour {
 
 	public GameObject pigeon;
+	public AudioClip clickSound ;
 
 	Vector3 mouse2D;
 
 	// Use this for initialization
 	void Start () {
 		ManagerGame.point = 5;
+
 	}
 	
 
@@ -24,6 +26,8 @@ public class ManagerPigeon : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		audio.PlayOneShot(clickSound);
+
 		if(ManagerGame.point >= 5 )
 		{
 			GameObject go = Instantiate (pigeon, new Vector3(mouse2D.x, mouse2D.y, 0), Quaternion.identity) as GameObject;
