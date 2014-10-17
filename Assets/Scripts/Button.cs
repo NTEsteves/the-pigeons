@@ -7,6 +7,8 @@ public class Button : MonoBehaviour {
 	public Sprite mouseOverSprite;
 	public Sprite mouseExitSprite;
 	public AudioClip clickSound ;
+	public float dayTime ;
+	float initialDayTime ; 
 
 	SpriteRenderer renderer;
 
@@ -36,6 +38,7 @@ public class Button : MonoBehaviour {
 	void OnMouseDown()
 	{
 		audio.PlayOneShot(clickSound);
+		dayTime = initialDayTime ;
 
 	}
 
