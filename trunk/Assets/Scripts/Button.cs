@@ -38,8 +38,12 @@ public class Button : MonoBehaviour {
 	void OnMouseDown()
 	{
 		audio.PlayOneShot(clickSound);
-		dayTime = initialDayTime ;
+		dayTime = initialDayTime;
 
+		if(this.gameObject.tag == "btnPause")
+		{
+			ManagerGame.isPaused =!ManagerGame.isPaused;
+		}
 	}
 
 	void OnMouseUp()

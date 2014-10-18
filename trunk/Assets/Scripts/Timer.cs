@@ -17,6 +17,8 @@ public class Timer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if(ManagerGame.isPaused) return;
+
 		if (Input.GetKeyDown("f")) {
 			Application.LoadLevel(scene);
 		}

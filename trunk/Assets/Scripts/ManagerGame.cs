@@ -7,6 +7,7 @@ public class ManagerGame : MonoBehaviour {
 	public static int score;
 	public static int point;
 
+	public static bool isPaused;
 
 	// Use this for initialization
 	void Start () {
@@ -30,5 +31,6 @@ public class ManagerGame : MonoBehaviour {
 		GUI.Label (new Rect (40, 215, 50, 15), "Vel Bullet: " + Pigeon.lastForceBullet, customButton);
 		GUI.Label (new Rect (40, 245, 50, 15), "Score: " + score, customButton);
 		GUI.Label (new Rect (40, 260, 50, 15), "Point: " + point, customButton);
+		GUI.Label (new Rect (40, 310, 50, 15), "Is Pause: " + isPaused, customButton);
 	}
 }
