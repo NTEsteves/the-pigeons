@@ -15,12 +15,14 @@ public class Person : MonoBehaviour {
 
 	void Update () {
 		// Movendo a pessoa
-		trans.Translate (new Vector3(velocity *direction, 0, 0));
-
-		if(trans.position.x < limitForDestroy[0] || trans.position.x > limitForDestroy[1])
+		if(!ManagerGame.isPaused)
 		{
-			Destroy(this.gameObject);
+			trans.Translate (new Vector3(velocity *direction, 0, 0));
 		}
+			if(trans.position.x < limitForDestroy[0] || trans.position.x > limitForDestroy[1])
+			{
+				Destroy(this.gameObject);
+			}
 	}
 
 	// Metodo para settar a direcao da pessoa (alvo)
