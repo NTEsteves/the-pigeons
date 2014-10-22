@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Button : MonoBehaviour {
-
+public class Button : MonoBehaviour 
+{
 	public string scene;
 	public Sprite mouseOverSprite;
 	public Sprite mouseExitSprite;
 	public AudioClip clickSound ;
-	public float dayTime ;
-	float initialDayTime ; 
+	//public float dayTime ;
+	//float initialDayTime ; 
 
 	SpriteRenderer renderer;
 
@@ -37,18 +37,28 @@ public class Button : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		audio.PlayOneShot(clickSound);
-		dayTime = initialDayTime;
 
 		if(this.gameObject.tag == "btnPause")
 		{
 			ManagerGame.isPaused =!ManagerGame.isPaused;
 		}
+
+		if(this.gameObject.tag == "btnSound")
+		{
+			ManagerGame.isSound =!ManagerGame.isSound;
+		}
+
+		if(ManagerGame.isSound) return;
+
+		audio.PlayOneShot(clickSound);
 	}
 
 	void OnMouseUp()
 	{
-		Application.LoadLevel(scene);
+		if(this.gameObject.tag == "btnGeneral")
+		{
+			Application.LoadLevel(scene);
+		}
 
 	}
 
