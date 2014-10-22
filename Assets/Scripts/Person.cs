@@ -9,20 +9,21 @@ public class Person : MonoBehaviour {
 	public float velocity;
 	public int[] limitForDestroy = new int[2];
 
-	void Start () {
+	void Start () 
+	{
 		trans = GetComponent<Transform>();
 	}
 
-	void Update () {
-		// Movendo a pessoa
-		if(!ManagerGame.isPaused)
+	void Update () 
+	{
+		if(ManagerGame.isPaused) return;
+
+		trans.Translate (new Vector3(velocity *direction, 0, 0));
+	
+		if(trans.position.x < limitForDestroy[0] || trans.position.x > limitForDestroy[1])
 		{
-			trans.Translate (new Vector3(velocity *direction, 0, 0));
+			Destroy(this.gameObject);
 		}
-			if(trans.position.x < limitForDestroy[0] || trans.position.x > limitForDestroy[1])
-			{
-				Destroy(this.gameObject);
-			}
 	}
 
 	// Metodo para settar a direcao da pessoa (alvo)

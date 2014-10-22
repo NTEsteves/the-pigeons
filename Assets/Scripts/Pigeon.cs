@@ -22,7 +22,10 @@ public class Pigeon : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		if(ManagerGame.isPaused) return;
+
 		if(mouseDown)
 		{
 			if(forceBullet <= 5)

@@ -19,7 +19,9 @@ public class ManagerWild : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		if(ManagerGame.isPaused) return;
 
 		timeChange -= Time.deltaTime;
 

@@ -26,6 +26,8 @@ public class ManagerPigeon : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		if(ManagerGame.isPaused) return;
+
 		audio.PlayOneShot(clickSound);
 
 		//if(ManagerGame.point >= 5 )

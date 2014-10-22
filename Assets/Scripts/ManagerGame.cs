@@ -1,23 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManagerGame : MonoBehaviour {
-
+public class ManagerGame : MonoBehaviour 
+{
 	public GUIStyle customButton;
+
 	public static int score;
+
 	public static int point;
 
 	public static bool isPaused;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
+	public static bool isSound;
 
 	public static Vector3 convertCoordMouse2D(Vector3 mouse3D)
 	{
