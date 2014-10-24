@@ -28,6 +28,8 @@ public class ManagerPigeon : MonoBehaviour {
 	{
 		if(ManagerGame.isPaused) return;
 
+		if(ManagerGame.isSound) exit ;
+
 		audio.PlayOneShot(clickSound);
 
 		//if(ManagerGame.point >= 5 )
