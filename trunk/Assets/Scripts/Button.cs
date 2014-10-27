@@ -22,28 +22,20 @@ public class Button : MonoBehaviour
 	{
 		audioSource.mute = ManagerGame.isMute;
 	}
-
-	void OnMouseOver ()
-	{
-		renderer.sprite = mouseOverSprite;
-	}
-
-	void OnMouseExit ()
-	{
-		renderer.sprite = mouseExitSprite;
-	}
-
+	
 	void OnMouseDown ()
 	{
 
 		if (this.gameObject.tag == "btnPause") 
 		{
 			ManagerGame.isPaused = !ManagerGame.isPaused;
+			renderer.sprite = ManagerGame.isPaused ? mouseOverSprite : mouseExitSprite;
 		}
 
 		if (this.gameObject.tag == "btnSound") 
 		{
 			ManagerGame.isMute = !ManagerGame.isMute;
+			renderer.sprite = ManagerGame.isMute ? mouseOverSprite : mouseExitSprite;
 		}
 
 		audio.PlayOneShot (clickSound);
@@ -51,9 +43,9 @@ public class Button : MonoBehaviour
 
 	void OnMouseUp ()
 	{
+
 		if (this.gameObject.tag == "btnGeneral") 
 		{
-
 			Application.LoadLevel (scene);
 
 		}
