@@ -6,6 +6,7 @@ public class ManagerPigeon : MonoBehaviour {
 	public GameObject pigeon;
 	public AudioClip clickSound;
 
+	AudioSource audioSource;
 	Vector3 touch2D;
 	bool goInstance;
 	float[] placePopulated = new float[12];
@@ -14,12 +15,14 @@ public class ManagerPigeon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		goInstance = false;
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
 		if(ManagerGame.isPaused) return;
+		audioSource.mute = ManagerGame.isMute;
 
 		if(Input.GetMouseButtonDown(0))
 		{
@@ -40,16 +43,29 @@ public class ManagerPigeon : MonoBehaviour {
 		
 		if(goInstance)
 		{
-			int populated = 0;
+			bool populated = false;
 			float place = 0;
 			for(int i = 0; i < targets.Length; i++)
 			{
 				if(touch2D.x >= targets[i] && touch2D.x <= targets[i +1])
 				{
-					place = ((targets[i] + targets[i +1]) /2);
-					GameObject go = Instantiate (pigeon, new Vector3(place, touch2D.y, 0), Quaternion.identity) as GameObject;
-					audio.PlayOneShot(clickSound);
-					goInstance = !goInstance; 
+					place = ((targets[i] + targets[i +1]) /2); 
+
+					for(int j = 0; j < placePopulated.Length; j++)
+					{
+						if(place.Equals(placePopulated[j]))
+						{
+							populated  = true;
+						}
+					}
+
+					if(!populated)
+					{
+						GameObject go = Instantiate (pigeon, new Vector3(place, touch2D.y, 0), Quaternion.identity) as GameObject;
+						audio.PlayOneShot(clickSound);
+						goInstance = !goInstance;
+						placePopulated[i] = place;
+					}
 				}
 			}
 		}
