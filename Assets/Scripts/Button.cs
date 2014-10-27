@@ -3,61 +3,60 @@ using System.Collections;
 
 public class Button : MonoBehaviour
 {
-		public string scene;
-		public Sprite mouseOverSprite;
-		public Sprite mouseExitSprite;
-		public AudioClip clickSound ;
-		//public float dayTime ;
-		//float initialDayTime ; 
+	public string scene;
+	public Sprite mouseOverSprite;
+	public Sprite mouseExitSprite;
+	public AudioClip clickSound ;
+		 
+	private SpriteRenderer renderer;
+	private AudioSource audioSource;
 
-		SpriteRenderer renderer;
+	void Start ()
+	{
+		renderer = GetComponent<SpriteRenderer> ();
+		audioSource = GetComponent<AudioSource>();
+		mouseExitSprite = renderer.sprite;
+	}
 
-		// Use this for initialization
-		void Start ()
+	void Update ()
+	{
+		audioSource.mute = ManagerGame.isMute;
+	}
+
+	void OnMouseOver ()
+	{
+		renderer.sprite = mouseOverSprite;
+	}
+
+	void OnMouseExit ()
+	{
+		renderer.sprite = mouseExitSprite;
+	}
+
+	void OnMouseDown ()
+	{
+
+		if (this.gameObject.tag == "btnPause") 
 		{
-				renderer = GetComponent<SpriteRenderer> ();
-				mouseExitSprite = renderer.sprite;
-		}
-	
-		// Update is called once per frame
-		void Update ()
-		{
-	
-		}
-
-		void OnMouseOver ()
-		{
-				renderer.sprite = mouseOverSprite;
-		}
-
-		void OnMouseExit ()
-		{
-				renderer.sprite = mouseExitSprite;
-		}
-
-		void OnMouseDown ()
-		{
-
-				if (this.gameObject.tag == "btnPause") {
-						ManagerGame.isPaused = !ManagerGame.isPaused;
-				}
-
-				if (this.gameObject.tag == "btnSound") {
-						ManagerGame.isSound = !ManagerGame.isSound;
-				}
-
-				if (ManagerGame.isSound) return;
-
-                audio.PlayOneShot (clickSound);
+			ManagerGame.isPaused = !ManagerGame.isPaused;
 		}
 
-		void OnMouseUp ()
+		if (this.gameObject.tag == "btnSound") 
 		{
-				if (this.gameObject.tag == "btnGeneral") {
-
-						Application.LoadLevel (scene);
-
-				}
+			ManagerGame.isMute = !ManagerGame.isMute;
 		}
+
+		audio.PlayOneShot (clickSound);
+	}
+
+	void OnMouseUp ()
+	{
+		if (this.gameObject.tag == "btnGeneral") 
+		{
+
+			Application.LoadLevel (scene);
+
+		}
+	}
 
 }

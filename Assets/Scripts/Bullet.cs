@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
 		// Adicionando a velocidade do vendo de acordo com a sua direçao e dividindo pela força gerada pelo
 		// pombo
 		rig2D.AddForce (new Vector2 ((ManagerWild.velocity *ManagerWild.direction) /force, 0));
