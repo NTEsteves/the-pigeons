@@ -7,12 +7,22 @@ public class ManagerGame : MonoBehaviour
 
 	public static int score;
 
-	public static int point;
+	public static int point;  
 
+	//Variavel pra verificar se o game esta pausado
 	public static bool isPaused;
 
-	public static bool isSound;
+	//Variavel pra determinar se o game esta mudo
+	public static bool isMute;
 
+	// Metodo para settar os atributos iniciais da cena de Game
+	void Start()
+	{
+		isMute = false;
+
+	}
+
+	//Funçao para convertar as coordenadas
 	public static Vector3 convertCoordMouse2D(Vector3 mouse3D)
 	{
 		return Camera.main.ScreenToWorldPoint(mouse3D);
