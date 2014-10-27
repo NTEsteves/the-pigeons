@@ -3,6 +3,7 @@ guid: b44bf3f8e8ccb4647accd7ec9b8c6a2b
 TextureImporter:
   fileIDToRecycleName:
     21300000: som
+    21300002: btnSound
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +27,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
