@@ -50,6 +50,7 @@ public class Pigeon : MonoBehaviour {
 
 	void OnMouseUp()
 	{
+		if(ManagerGame.isPaused) return;
 		audio.PlayOneShot(clickSound);
 		GameObject go = Instantiate(bullet, new Vector3(trans.position.x, (trans.position.y -0.3f), trans.position.z), Quaternion.identity) as GameObject;
 		go.GetComponent<Bullet> ().setForce (forceBullet);
