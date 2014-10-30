@@ -34,6 +34,8 @@ public class Button : MonoBehaviour
 
 		if (this.gameObject.tag == "btnSound") 
 		{
+			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().volume = (GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().volume == 0)?1:0;
+
 			ManagerGame.isMute = !ManagerGame.isMute;
 			renderer.sprite = ManagerGame.isMute ? mouseOverSprite : mouseExitSprite;
 		}
