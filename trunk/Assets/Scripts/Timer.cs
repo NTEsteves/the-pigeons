@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
 		}
 		dayTime -= Time.deltaTime;
 
-		Debug.Log("dayTime: " + dayTime);
+		//Debug.Log("dayTime: " + dayTime);
 
 		if(dayTime <= 0) // Quando o tempo for menor que zero ele irá reiniciar.
 		{

@@ -47,6 +47,7 @@ public class Button : MonoBehaviour
 		if (this.gameObject.tag == "btnGeneral") 
 		{
 			Application.LoadLevel (scene);
+			Pigeon.lastForceBullet = 0;
 
 		}
 	}
