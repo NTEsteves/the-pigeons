@@ -16,11 +16,13 @@ public class Pigeon : MonoBehaviour {
 	public AudioClip clickSound ;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		trans = GetComponent<Transform>();
 		audioSource = GetComponent<AudioSource>();
 		forceBullet = 0;
 		mouseDown = false;
+		lastForceBullet = 0;
 	}
 	
 	// Update is called once per frame
