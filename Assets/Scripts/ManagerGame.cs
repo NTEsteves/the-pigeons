@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ManagerGame : MonoBehaviour 
 {
-	public GUIStyle customButton;
+	public GUIStyle custom;
+	public GUIStyle shadow;
 
 	public static int score;
 
@@ -15,11 +16,20 @@ public class ManagerGame : MonoBehaviour
 	//Variavel pra determinar se o game esta mudo
 	public static bool isMute;
 
+	public float dayTime;
+
+	float initialDayTime;
+
 	// Metodo para settar os atributos iniciais da cena de Game
 	void Start()
 	{
 		isMute = false;
 
+		initialDayTime = dayTime;
+	}
+	void Update()
+	{
+		dayTime -= Time.deltaTime;
 	}
 
 	//Funçao para convertar as coordenadas
@@ -30,11 +40,18 @@ public class ManagerGame : MonoBehaviour
 
 	void OnGUI() 
 	{
-		GUI.Label (new Rect (40, 200, 50, 15), "Wild: " + ManagerWild.velocity, customButton);
-		GUI.Label (new Rect (40, 230, 50, 15), "Wild Direction: " + ManagerWild.direction, customButton);
-		GUI.Label (new Rect (40, 215, 50, 15), "Vel Bullet: " + Pigeon.lastForceBullet, customButton);
-		GUI.Label (new Rect (40, 245, 50, 15), "Score: " + score, customButton);
-		GUI.Label (new Rect (40, 260, 50, 15), "Point: " + point, customButton);
-		GUI.Label (new Rect (40, 310, 50, 15), "Is Pause: " + isPaused, customButton);
+		//GUI.Label (new Rect (550, 550, 50, 15), "Wind: " + ManagerWild.velocity, custom);
+		//GUI.Label (new Rect (550, 230, 50, 15), "Wind Direction: " + ManagerWild.direction, custom);
+		//GUI.Label (new Rect (550, 215, 50, 15), "Vel Bullet: " + Pigeon.lastForceBullet, custom);
+		GUI.Label (new Rect (390, 510, 50, 15), "Score: " + score, custom);
+		GUI.Label (new Rect (510, 510, 50, 15), "Point: " + point, custom);  
+		GUI.Label (new Rect (630, 510, 50, 15), "Time: " + dayTime.ToString("F0"), custom);
+
+		//GUI.Label (new Rect (550, 550, 50, 15), "Wind: " + ManagerWild.velocity, shadow);
+		//GUI.Label (new Rect (550, 230, 50, 15), "Wind Direction: " + ManagerWild.direction, shadow);
+		//GUI.Label (new Rect (550, 215, 50, 15), "Vel Bullet: " + Pigeon.lastForceBullet, shadow);
+		GUI.Label (new Rect (390, 510, 50, 15), "Score: " + score, shadow);
+		GUI.Label (new Rect (510, 510, 50, 15), "Point: " + point, shadow);  
+		GUI.Label (new Rect (630, 510, 50, 15), "Time: " + dayTime.ToString("F0"), shadow);
 	}
 }
