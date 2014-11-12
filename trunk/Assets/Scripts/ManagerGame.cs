@@ -29,6 +29,7 @@ public class ManagerGame : MonoBehaviour
 	}
 	void Update()
 	{
+		if(ManagerGame.isPaused) return;
 		dayTime -= Time.deltaTime;
 	}
 
