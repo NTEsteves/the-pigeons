@@ -5,6 +5,7 @@ public class Person : MonoBehaviour {
 
 	int direction;
 	Transform trans;
+	Animator anim;
 
 	public float velocity;
 	public int[] limitForDestroy = new int[2];
