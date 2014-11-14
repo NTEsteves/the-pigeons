@@ -5,6 +5,7 @@ public class Timer : MonoBehaviour
 {
 	public string scene;
 	public float dayTime; // Tempo geral
+	public AudioClip clickSound ;
 
 	float initialDayTime; //Tempo inicial
 
@@ -30,6 +31,7 @@ public class Timer : MonoBehaviour
 		{
 			dayTime = initialDayTime;
 			Application.LoadLevel(scene);
+			audio.PlayOneShot (clickSound);
 		}
 	
 	}

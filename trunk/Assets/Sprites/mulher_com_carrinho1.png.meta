@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: 82a2326c55e674db28cee4f6027538d1
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mulher_com_carrinho1_0
+    21300002: mulher_com_carrinho1_1
+    21300004: mulher_com_carrinho1_2
+    21300006: mulher_com_carrinho1_3
+    21300008: mulher_com_carrinho1_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +30,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +47,56 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mulher_com_carrinho1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 185
+        height: 188
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mulher_com_carrinho1_1
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 0
+        width: 179
+        height: 188
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mulher_com_carrinho1_2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 177
+        height: 188
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mulher_com_carrinho1_3
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 0
+        width: 197
+        height: 188
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mulher_com_carrinho1_4
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 0
+        width: 193
+        height: 188
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
