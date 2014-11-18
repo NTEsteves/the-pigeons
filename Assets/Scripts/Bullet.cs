@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour {
 
 		// Adicionando a velocidade do vendo de acordo com a sua direçao e dividindo pela força gerada pelo
 		// pombo
-		rig2D.AddForce (new Vector2 ((ManagerWild.velocity *ManagerWild.direction) /force, 0));
+		rig2D.AddForce (new Vector2 ((ManagerWind.velocity *ManagerWind.direction) /force, 0));
 
 		// Caso ele saida da tela pelos lados o objeto tambem sera destruido
 		if(trans.position.x < limitForDestroy[0] || trans.position.x > limitForDestroy[1])
