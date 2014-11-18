@@ -43,28 +43,32 @@ public class ManagerPigeon : MonoBehaviour {
 		
 		if(goInstance)
 		{
-			bool populated = false;
-			float place = 0;
-			for(int i = 0; i < targets.Length; i++)
+			if(ManagerGame.point >= 5)
 			{
-				if(touch2D.x >= targets[i] && touch2D.x <= targets[i +1])
+				bool populated = false;
+				float place = 0;
+				for(int i = 0; i < targets.Length; i++)
 				{
-					place = ((targets[i] + targets[i +1]) /2); 
-
-					for(int j = 0; j < placePopulated.Length; j++)
+					if(touch2D.x >= targets[i] && touch2D.x <= targets[i +1])
 					{
-						if(place.Equals(placePopulated[j]))
+						place = ((targets[i] + targets[i +1]) /2); 
+						
+						for(int j = 0; j < placePopulated.Length; j++)
 						{
-							populated  = true;
+							if(place.Equals(placePopulated[j]))
+							{
+								populated  = true;
+							}
 						}
-					}
-
-					if(!populated)
-					{
-						GameObject go = Instantiate (pigeon, new Vector3(place, touch2D.y, 0), Quaternion.identity) as GameObject;
-						audio.PlayOneShot(clickSound);
-						goInstance = !goInstance;
-						placePopulated[i] = place;
+						
+						if(!populated)
+						{
+							GameObject go = Instantiate (pigeon, new Vector3(place, touch2D.y, 0), Quaternion.identity) as GameObject;
+							audio.PlayOneShot(clickSound);
+							goInstance = !goInstance;
+							placePopulated[i] = place;
+							ManagerGame.point -= 5;
+						}
 					}
 				}
 			}
