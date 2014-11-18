@@ -26,6 +26,8 @@ public class ManagerGame : MonoBehaviour
 		isMute = false;
 
 		initialDayTime = dayTime;
+
+		point = 5;
 	}
 	void Update()
 	{
