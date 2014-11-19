@@ -77,7 +77,7 @@ TextureImporter:
         serializedVersion: 2
         x: 380
         y: 0
-        width: 190
+        width: 194
         height: 136
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -85,9 +85,9 @@ TextureImporter:
     - name: An_dog Left_3
       rect:
         serializedVersion: 2
-        x: 570
+        x: 574
         y: 0
-        width: 190
+        width: 188
         height: 136
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -95,9 +95,9 @@ TextureImporter:
     - name: An_dog Left_4
       rect:
         serializedVersion: 2
-        x: 760
+        x: 761
         y: 0
-        width: 190
+        width: 193
         height: 136
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -105,9 +105,9 @@ TextureImporter:
     - name: An_dog Left_5
       rect:
         serializedVersion: 2
-        x: 951
+        x: 954
         y: 0
-        width: 195
+        width: 192
         height: 136
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -115,7 +115,7 @@ TextureImporter:
     - name: An_dog Left_6
       rect:
         serializedVersion: 2
-        x: 1150
+        x: 1147
         y: 0
         width: 180
         height: 136
@@ -125,9 +125,9 @@ TextureImporter:
     - name: An_dog Left_7
       rect:
         serializedVersion: 2
-        x: 1330
+        x: 1328
         y: 0
-        width: 190
+        width: 192
         height: 136
       alignment: 0
       pivot: {x: .5, y: .5}
