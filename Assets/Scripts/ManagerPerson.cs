@@ -50,7 +50,7 @@ public class ManagerPerson : MonoBehaviour
 		positionCreate = Random.Range(0, 2) % 2 == 0 ? listPositionCreate[0] : listPositionCreate[1];
 
 		// A linha que instancia o meu prefab de um personagem
-		GameObject go = Instantiate(person[Random.Range(0, person.Length -1)], new Vector3(positionCreate, -2f, 0), Quaternion.identity) as GameObject;
+		GameObject go = Instantiate(person[Random.Range(0, person.Length)], new Vector3(positionCreate, -2f, 0), Quaternion.identity) as GameObject;
 
 		// Setando o tempo de criação do personagem que esta sendo sorteado
 		timeCreate = Random.Range(intervalTimeCreate[0], intervalTimeCreate[1]);

@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
 	Rigidbody2D rig2D;
 	Transform trans;
 	float force;
+	public AudioClip clickSound;
 
 	public int[] limitForDestroy = new int[2];
 
@@ -46,6 +47,7 @@ public class Bullet : MonoBehaviour {
 
 		case "Person":
 			Destroy(this.gameObject);
+			audio.PlayOneShot(clickSound);
 			ManagerGame.score ++;
 			ManagerGame.point ++;
 			break;
