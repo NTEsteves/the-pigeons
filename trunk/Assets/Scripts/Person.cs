@@ -9,6 +9,8 @@ public class Person : MonoBehaviour
 
 	Animator anim;
 
+	public AudioClip clickSound;
+
 	public float velocity;
 
 	public int[] limitForDestroy = new int[2];
@@ -31,6 +33,8 @@ public class Person : MonoBehaviour
 		{
 			Destroy(this.gameObject);
 		}
+
+		audio.PlayOneShot(clickSound);
 	}
 
 	// Metodo para settar a direcao da pessoa (alvo)
