@@ -42,14 +42,15 @@ public class Bullet : MonoBehaviour {
 		{
 		case "Ground":
 			Destroy(this.gameObject);
-			Debug.Log ("Ground");
 			break;
 
 		case "Person":
-			Destroy(this.gameObject);
-			audio.PlayOneShot(clickSound);
+
+			//audio.PlayOneShot(clickSound);
 			ManagerGame.score ++;
 			ManagerGame.point ++;
+			Destroy(this.gameObject);
+
 			break;
 				
 		}

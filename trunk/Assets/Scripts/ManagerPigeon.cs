@@ -64,7 +64,7 @@ public class ManagerPigeon : MonoBehaviour {
 						if(!populated)
 						{
 							GameObject go = Instantiate (pigeon, new Vector3(place, touch2D.y, 0), Quaternion.identity) as GameObject;
-							audio.PlayOneShot(clickSound);
+							//audio.PlayOneShot(clickSound);
 							goInstance = !goInstance;
 							placePopulated[i] = place;
 							ManagerGame.point -= 5;
