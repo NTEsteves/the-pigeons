@@ -49,6 +49,8 @@ public class Bullet : MonoBehaviour {
 			//audio.PlayOneShot(clickSound);
 			ManagerGame.score ++;
 			ManagerGame.point ++;
+			//Person.velocity = 0.10f;
+			other.gameObject.GetComponent<Person>().velocity = 0.10f;
 			Destroy(this.gameObject);
 
 			break;

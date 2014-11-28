@@ -28,13 +28,13 @@ public class ManagerWind : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		//se ey woih sdokhs dlkhsd lkjshd lks hd
+
 		if(ManagerGame.isPaused) return;
 
-		//vou aspdkjnsopdj sopid sh d
+
 		timeChange -= Time.deltaTime;
 
-		//se sojhd osjhd ojsh dojh sdfjoxc
+
 		if(timeChange <= 0)
 		{
 			velocity = Random.Range(intervalVelocity[0], intervalVelocity[1]);
@@ -42,7 +42,6 @@ public class ManagerWind : MonoBehaviour {
 			direction = Random.seed % 2 == 0 ? 1 : -1;
 
 		}
-
 
 		Debug.Log ("direction " + direction);
 

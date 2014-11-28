@@ -11,7 +11,7 @@ public class Person : MonoBehaviour
 
 	public AudioClip clickSound;
 
-	public float velocity;
+	public float velocity = 0.01f;
 
 	public int[] limitForDestroy = new int[2];
 
