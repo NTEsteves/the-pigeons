@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pigeon : MonoBehaviour {
-
+public class Pigeon : MonoBehaviour 
+{
 	//Atributo que sera usado para referenciar qual prefab nos queremos instanciar
 	public GameObject bullet;
 
 	private bool mouseDown;
+
 	private AudioSource audioSource;
+
 	private float forceBullet;
 
 	public static float lastForceBullet;
 
 	private Transform trans;
+
 	public AudioClip clickSound ;
 
-	// Use this for initialization
 	void Start () 
 	{
 		trans = GetComponent<Transform>();
@@ -25,7 +27,6 @@ public class Pigeon : MonoBehaviour {
 		lastForceBullet = 0;
 	}
 	
-	// Update is called once per frame
 	void Update () 
 	{
 		if(ManagerGame.isPaused) return;
@@ -53,10 +54,15 @@ public class Pigeon : MonoBehaviour {
 	void OnMouseUp()
 	{
 		if(ManagerGame.isPaused) return;
+
 		audio.PlayOneShot(clickSound);
+
 		GameObject go = Instantiate(bullet, new Vector3(trans.position.x, (trans.position.y -0.3f), trans.position.z), Quaternion.identity) as GameObject;
-		go.GetComponent<Bullet> ().setForce (forceBullet);
+
+		go.GetComponent<Bullet>().setForce(forceBullet);
+
 		forceBullet = 0;
+
 		mouseDown = false;
 	}
 }
