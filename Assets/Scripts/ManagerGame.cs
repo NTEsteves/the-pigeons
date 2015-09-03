@@ -16,7 +16,7 @@ public class ManagerGame : MonoBehaviour
 	//Variavel pra determinar se o game esta mudo
 	public static bool isMute;
 
-	public float dayTime;
+	public static float dayTime;
 
 	float initialDayTime;
 
@@ -24,6 +24,7 @@ public class ManagerGame : MonoBehaviour
 	void Start()
 	{
 		isMute = false;
+		dayTime = 60;
 
 		initialDayTime = dayTime;
 
