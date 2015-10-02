@@ -55,7 +55,7 @@ public class Pigeon : MonoBehaviour
 	{
 		if(ManagerGame.isPaused) return;
 
-		audio.PlayOneShot(clickSound);
+		GetComponent<AudioSource>().PlayOneShot(clickSound);
 
 		GameObject go = Instantiate(bullet, new Vector3(trans.position.x, (trans.position.y -0.3f), trans.position.z), Quaternion.identity) as GameObject;
 

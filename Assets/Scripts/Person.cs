@@ -34,7 +34,7 @@ public class Person : MonoBehaviour
 			Destroy(this.gameObject);
 		}
 
-		audio.PlayOneShot(clickSound);
+		GetComponent<AudioSource>().PlayOneShot(clickSound);
 	}
 
 	// Metodo para settar a direcao da pessoa (alvo)

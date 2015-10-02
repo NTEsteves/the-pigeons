@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
 		{
 			dayTime = initialDayTime;
 			Application.LoadLevel(scene);
-			audio.PlayOneShot (clickSound);
+			GetComponent<AudioSource>().PlayOneShot (clickSound);
 		}
 	
 	}

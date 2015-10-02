@@ -40,7 +40,7 @@ public class Button : MonoBehaviour
 			renderer.sprite = ManagerGame.isMute ? mouseOverSprite : mouseExitSprite;
 		}
 
-		audio.PlayOneShot (clickSound);
+		GetComponent<AudioSource>().PlayOneShot (clickSound);
 	}
 
 	void OnMouseUp ()
